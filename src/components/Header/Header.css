@@ -1,0 +1,33 @@
+header {
+  background: #000000;
+  color: white;
+}
+
+
+.nav {
+  justify-content: center;
+}
+
+.nav-link {
+  color: white!important;
+}
+
+.cart {
+  position: fixed;
+  right: 10px;
+}
+
+.cart__value {
+  position: relative;
+  top: -10px;
+}
+
+header h1 {
+  text-align: center;
+  padding-bottom: 46px;
+  font-size: 96px;
+  background-color: #777777;
+  border-top: 1px solid white;
+  margin: 0 -12px;
+  font-family: 'Times New Roman', Times, serif;
+}

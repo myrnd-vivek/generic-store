@@ -1,0 +1,44 @@
+.footer {
+  background: hwb(212 71% 5%);
+  background: #000;
+  display: flex;
+}
+
+.footer__title {
+  text-align: center;
+  color: white;
+  width: 50%;
+  font-size: 50px;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.footer__icons {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footer__icons div {
+  display: flex;
+  width: 50%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.footer__icons .bi::before {
+  font-size: 24px;
+}
+
+.bi-youtube {
+  color: red;
+}
+
+.bi-spotify {
+  color: #1ED760;
+}
+
+.bi-facebook {
+  color: #149FF9;
+}
