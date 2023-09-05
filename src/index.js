@@ -7,11 +7,12 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'react-bootstrap/dist/react-bootstrap'
+import { CartProvider } from './context/cart-context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <CartProvider>
     <App />
-  </React.StrictMode>
+  </CartProvider>
 );
 

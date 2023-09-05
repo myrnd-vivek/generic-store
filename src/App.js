@@ -12,6 +12,7 @@ import About from './pages/About'
 import Store from './pages/Store'
 import { Col, Container, Row } from 'react-bootstrap'
 import CartItem from './components/Cart/CartItem'
+import { useCartContext } from './context/cart-context'
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
 ])
 
 const App = () => {
+  const {IsCartOpen} = useCartContext()
   return (
     <>
       <Container fluid>
@@ -42,7 +44,7 @@ const App = () => {
           <Footer />
         </Row>
       </Container>
-      <CartItem />
+      {IsCartOpen && <CartItem />}
     </>
   )
 }
