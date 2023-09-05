@@ -11,6 +11,7 @@ import { Footer } from './components/Footer/Footer'
 import About from './pages/About'
 import Store from './pages/Store'
 import { Col, Container, Row } from 'react-bootstrap'
+import CartItem from './components/Cart/CartItem'
 
 const router = createBrowserRouter([
   {
@@ -29,17 +30,20 @@ const router = createBrowserRouter([
 
 const App = () => {
   return (
-    <Container fluid>
-      <Row>
-        <Header />
-      </Row>
-      <Row>
-        <Store />
-      </Row>
-      <Row>
-        <Footer />
-      </Row>
-    </Container>
+    <>
+      <Container fluid>
+        <Row>
+          <Header />
+        </Row>
+        <Row>
+          <Store />
+        </Row>
+        <Row>
+          <Footer />
+        </Row>
+      </Container>
+      <CartItem />
+    </>
   )
 }
 
