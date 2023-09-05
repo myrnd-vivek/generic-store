@@ -1,23 +1,29 @@
 import React from "react";
-import { Container, Nav, Navbar, Badge } from "react-bootstrap";
+import { Nav, Badge } from "react-bootstrap";
+import { useCartContext } from "../../context/cart-context";
+import { NavLink, useLocation } from "react-router-dom";
 
 import "./Header.css";
-import { useCartContext } from "../../context/cart-context";
 
 const Header = () => {
-	const {totalItem, openCart} = useCartContext();
+	const { totalItem, openCart } = useCartContext();
+	const { pathname } = useLocation();
 	return (
 		<header>
-				<Nav className="nav">
-					<Nav.Link href="/home">Home</Nav.Link>
-					<Nav.Link href="/store">Store</Nav.Link>
-					<Nav.Link href="/about">About</Nav.Link>
-					<Nav.Link className="cart" onClick={() => openCart()}>
-						<i className="bi bi-cart"></i>
-						<Badge bg="primary" className="cart__value">{totalItem}</Badge>
-					</Nav.Link>
-				</Nav>
-				<h1>The Generics</h1>
+			<Nav className="nav">
+			<NavLink to='/' className='nav-link'>Home</NavLink>
+			<NavLink to='/store' className='nav-link'>Store</NavLink>
+			<NavLink to='/about' className='nav-link'>About</NavLink>
+			{pathname === "/store" && (
+				<NavLink className="cart nav-link" onClick={() => openCart()}>
+					<i className="bi bi-cart"></i>
+					<Badge bg="primary" className="cart__value">
+						{totalItem}
+					</Badge>
+				</NavLink>
+			)}
+			</Nav>
+			<h1>The Generics</h1>
 		</header>
 	);
 };

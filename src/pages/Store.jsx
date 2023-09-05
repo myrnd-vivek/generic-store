@@ -1,65 +1,29 @@
-import React from "react";
-import { Container, Row } from "react-bootstrap";
-import Product from "../components/Product/Product";
-import { styled } from "styled-components";
+import React from 'react'
+import { Container, Row } from 'react-bootstrap'
+import Header from '../components/Header/Header'
+import Footer from '../components/Footer/Footer'
+import CartItem from '../components/Cart/CartItem'
+import { useCartContext } from '../context/cart-context'
+import ProductList from '../components/Product/ProductList'
 
 const Store = () => {
-	const productsArr = [
-		{
-			id: 1,
-			title: "Colors",
-			price: 100,
-			imageUrl:
-				"https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
-		},
-		{
-			id: 2,
-			title: "Black and white Colors",
-			price: 50,
-			imageUrl:
-				"https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
-		},
-		{
-			id: 3,
-			title: "Yellow and Black Colors",
-			price: 70,
-			imageUrl:
-				"https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
-		},
+	const {IsCartOpen} = useCartContext()
+  return (
+    <>
+     <Container fluid>
+        <Row>
+          <Header />
+        </Row>
+        <Row>
+          <ProductList />
+        </Row>
+        <Row>
+          <Footer />
+        </Row>
+      </Container>
+      {IsCartOpen && <CartItem />}
+    </>
+  )
+}
 
-		{
-			id: 4,
-			title: "Blue Color",
-			price: 100,
-			imageUrl:
-				"https://prasadyash2411.github.io/ecom-website/img/Album%204.png",
-		},
-	];
-	return <Wrapper>
-			<h1>Music</h1>
-			<div className="prodoct__container">
-				{
-					productsArr.map((product) => {
-						return <Product key={product.id} product={product} />
-					})
-				}
-			</div>
-	</Wrapper>;
-};
-
-const Wrapper = styled.section`
-	h1 {
-		font-family: Metal Mania; 
-		text-align: center;
-	}
-
-	.prodoct__container {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		justify-items: center;
-		width: 50%;
-    margin: 0 auto;
-	}
-`
-
-export default Store;
+export default Store

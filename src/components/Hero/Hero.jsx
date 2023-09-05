@@ -6,11 +6,6 @@ const Hero = () => {
 		<Container>
 			<Row>
 				<Col>
-					<h1>The Generics</h1>
-				</Col>
-			</Row>
-			<Row>
-				<Col>
 					<button>Get our Latest Album</button>
 				</Col>
 			</Row>

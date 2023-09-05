@@ -1,9 +1,7 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
-
 import "./Footer.css";
 
-export const Footer = () => {
+const Footer = () => {
 	return (
 		<footer className="footer">
 			<div className="footer__title">The Generics</div>
@@ -17,3 +15,5 @@ export const Footer = () => {
 		</footer>
 	);
 };
+
+export default Footer;
