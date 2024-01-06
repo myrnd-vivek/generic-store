@@ -11,7 +11,6 @@ header {
   top: 0;
   z-index: 9999;
   background-color: black;
-  margin: 0 -12px;
 }
 
 .nav-link {
@@ -29,12 +28,11 @@ header {
 }
 
 header h1 {
-  text-align: center;
-  padding-bottom: 46px;
   font-size: 96px;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
   background-color: #777777;
   border-top: 1px solid white;
-  margin: 0 -12px;
-  font-family: 'Times New Roman', Times, serif;
-  margin-top: 44px;
+  padding-bottom: 46px;
+  margin-top: 40px;
 }
