@@ -7,6 +7,7 @@ import Contact from "./pages/Contact";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import ProductDetails from "./components/ProductDetails/ProductDetails";
+import Login from "./components/Login/Login";
 
 const App = () => {
 	return (
@@ -15,6 +16,7 @@ const App = () => {
 			<Switch>
 				<Route path="/" exact component={Home} />
 				<Route path="/about" component={About} />
+				<Route path="/login" component={Login} />
 				<Route path="/store" exact component={Store} />
 				<Route path="/store/:prodId" component={ProductDetails} />
 				<Route path="/contact" component={Contact} />
