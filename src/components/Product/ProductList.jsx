@@ -59,6 +59,7 @@ const Wrapper = styled.section`
 		width: 50%;
     margin: 0 auto;
 	}
+  cursor: pointer;
 `
 
 export default ProductList;

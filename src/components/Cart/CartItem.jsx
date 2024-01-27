@@ -4,8 +4,9 @@ import { styled } from "styled-components";
 import { useCartContext } from "../../context/cart-context";
 
 const CartItem = () => {
-	const {closeCart,cartItems} = useCartContext();
+	const { closeCart, cartItems, removeFromCart} = useCartContext();
 	const totalAmount = cartItems.reduce((total,curr) => curr.price + total,0);
+
 	return (
 		<Wrapper>
 			<h1>CART</h1>
@@ -24,7 +25,7 @@ const CartItem = () => {
 							return <tr key={index}>
 								<td><img src={item.imageUrl} alt={item.title} /> {item.title}</td>
 								<td>{item.price}</td>
-								<td>{item.quantity} <Button variant="danger">Remove</Button></td>
+								<td>{item.quantity} <Button variant="danger" onClick={() => removeFromCart({resourceId: item._id})}>Remove</Button></td>
 							</tr>
 						})
 					}
